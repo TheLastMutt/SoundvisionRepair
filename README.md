@@ -27,9 +27,13 @@ The manual shows how to remove the display unit from the chassis but does not sh
 
 The remaining boards are a board labeled "Peripheral", which has a daughter board in a laptop RAM socket. This daughter board (I'll call it "CPU board") contains the linux system.
 
+Peripheral and CPU board:
+
 ![Peripheral and CPU board front](images/01_peripheral_cpu.jpg)
 
 ![Peripheral and CPU board back](images/02_peripheral_cpu.jpg)
+
+CPU board (eMMC chip already removed):
 
 ![CPU board (eMMC chip removed)](images/03_cpu_board.jpg)
 
@@ -731,7 +735,7 @@ Device Status:     0x0003
 
 
 ## Firmware update file
-Since the root file system with the main application seemed to be corrupted I needed a working copy to try and reinstall the broken files. Maybe there was a firmware update to download from Loewe to extract files from. Searching the web leads to people discussing a firmware update, but the server location is gone. A looong search later I was successful with a link found [here](https://www.justanswer.co.uk/electronics/boj37-loewe-soundvision-unit-want-connect.html).
+Since the root file system with the main application seemed to be corrupted, I needed a working copy to try and reinstall the broken files. Maybe there was a firmware update to download from Loewe to extract files from. Searching the web leads to people discussing a firmware update, but the server location is gone. A looong search later I was successful with a link found [here](https://www.justanswer.co.uk/electronics/boj37-loewe-soundvision-unit-want-connect.html).
 
 OK, now I had a file called `Soundvision_3_11.1.dar.zip`. Extracting that yields a pdf file, an xml file and `Soundvision_3_11.1.dar.tli`. The `file` command identifies this as a "dar" archive. I had never heard of that, installed the "dar" software on my PC and tried to extract the archive. I tried various combinations of command line options, but most results were something like this:
 
@@ -813,7 +817,7 @@ Using CMD, CLK, D0 and GND should be enough to connect to the eMMC using an SD c
 
 ![SD connection assembled](images/09_sd_on_board.jpg)
 
-Now I needed to prevent the processor on the board from interfering with my communication. Finding the reset signal and keeping the processor in reset state should do it. I did not want to desolder the resistors.A reset controller is usually chip in a very small package which compares the supply voltage with a fixed threshold and pulls the reset signal low when the supply voltage is too low. There is a small 5-pin chip next to the processor with a convenient test pad next to it. Probing with a scope confirms that this is the reset signal.
+Now I needed to prevent the processor on the board from interfering with my communication. Finding the reset signal and keeping the processor in reset state should do it. I did not want to desolder the resistors. A reset controller is usually chip in a very small package which compares the supply voltage with a fixed threshold and pulls the reset signal low when the supply voltage is too low. There is a small 5-pin chip next to the processor with a convenient test pad next to it. Probing with a scope confirms that this is the reset signal.
 
 ![Reset signal test pad](images/05_reset.jpg)
 
@@ -903,7 +907,7 @@ Possible issues:
 
 * signal integrity issues due to the wires
 * not enough supply voltage stability for running at full speed due to the wires and few power connections
-* firmware cannot handle 8 GB chip or different maufacturer
+* firmware cannot handle 8 GB chip or different manufacturer
 * wrong clock speed for the new chip
 * screwed up connection in this big mess of wires
 * damaged board or some component due to repeated soldering attempts
