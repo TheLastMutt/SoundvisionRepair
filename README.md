@@ -156,6 +156,7 @@ It did not work out, I only got small files, error messages and the board seemed
 
 <details><summary>`ps ax` output</summary>
 <p>
+
 ```
   PID TTY      STAT   TIME COMMAND
     1 ?        Ss     0:00 init [5]           
@@ -219,12 +220,14 @@ It did not work out, I only got small files, error messages and the board seemed
   642 ?        S      0:00 sleep 2
   643 ttyS0    R+     0:00 ps ax
 ```
+
 </p>
 </details>
 
 
 <details><summary>`mount` output</summary>
 <p>
+
 ```
 rootfs on / type rootfs (rw)
 /dev/root on / type ext3 (rw,errors=continue,data=ordered)
@@ -237,11 +240,13 @@ tmpfs on /var/volatile type tmpfs (rw)
 tmpfs on /dev/shm type tmpfs (rw,mode=777)
 tmpfs on /media/ram type tmpfs (rw)
 ```
+
 </p>
 </details>
 
 <details><summary>`fdisk -l /dev/mmcblk0` output</summary>
 <p>
+
 ```
 Disk /dev/mmcblk0: 1807 MB, 1807745024 bytes
 4 heads, 16 sectors/track, 55168 cylinders, total 3530752 sectors
@@ -256,11 +261,13 @@ Disk identifier: 0x00000000
 /dev/mmcblk0p3         1081344     2129919      524288   83  Linux
 /dev/mmcblk0p4         2129920     3530751      700416   83  Linux
 ```
+
 </p>
 </details>
 
 <details><summary>`/etc/fstab` contents</summary>
 <p>
+
 ```
 # stock fstab - you probably want to override this with a machine specific one
 
@@ -277,12 +284,14 @@ tmpfs                /media/ram           tmpfs      defaults              0  0
 
 /dev/mmcblk0p4 /home/root auto defaults 1 1
 ```
+
 </p>
 </details>
 
 
 <details><summary>`lsusb` output</summary>
 <p>
+
 ```
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 001 Device 002: ID 0424:2514 Standard Microsystems Corp. 
@@ -290,12 +299,14 @@ Bus 001 Device 003: ID 0424:9512 Standard Microsystems Corp.
 Bus 001 Device 004: ID 0424:ec00 Standard Microsystems Corp. 
 Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 ```
+
 </p>
 </details>
 
 
 <details><summary>`lsusb -t` output</summary>
 <p>
+
 ```
 Bus#  2
 `-Dev#   1 Vendor 0x1d6b Product 0x0001
@@ -305,12 +316,14 @@ Bus#  1
     `-Dev#   3 Vendor 0x0424 Product 0x9512
       `-Dev#   4 Vendor 0x0424 Product 0xec00
 ```
+
 </p>
 </details>
 
 
 <details><summary>`lsusb -v` output</summary>
 <p>
+
 ```
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Device Descriptor:
@@ -711,6 +724,7 @@ Device Status:     0x0003
   Self Powered
   Remote Wakeup Enabled
 ```
+
 </p>
 </details>
 
